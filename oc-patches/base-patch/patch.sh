@@ -78,6 +78,8 @@ cat "$CURRENT_PATCH_PATH/opencentauri-logo-small.png" > ./app/resources/www/asse
 sed -re 's|(logo-img\[.+\])\{width:160px\}|\1{width:240px}|' -i ./app/resources/www/*.js
 # Remove store button
 sed -re 's|(\.store-box\[_ngcontent-%COMP%\])\{cursor:pointer;margin-left:150px;display:flex;align-items:center;border-radius:4px;background:#000;font-family:Microsoft YaHei;padding:6px 10px;font-size:14px;font-weight:400;color:#fff;opacity:.8\}|\1{cursor:pointer;margin-left:150px;display:none;align-items:center;border-radius:4px;background:#000;font-family:Microsoft YaHei;padding:6px 10px;font-size:14px;font-weight:400;color:#fff;opacity:.8}|' -i ./app/resources/www/*.js
+sed 's/background:#101112!important;border-radius:4px 4px/background:#101112!important;border-radius:0px 0px/g' -i ./app/resources/www/*.js
+
 
 echo Add OpenCentauri initialization to /etc/rc.local
 cat "$CURRENT_PATCH_PATH/rc.local" >> ./etc/rc.local
